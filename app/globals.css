@@ -4,7 +4,7 @@
 
 
 html, body{
-  @apply bg-gray-300
+  @apply bg-gradient-to-r from-sky-500 to-indigo-500
 }
 /* 
 :root {
