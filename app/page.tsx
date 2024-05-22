@@ -71,8 +71,7 @@ export default function Home() {
   }
 
 
-const gradientTextStyle=
-"text-white text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 font-light mx-auto"
+const gradientTextStyle="text-white text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 font-light mx-auto"
 
   return (
     <div className='h-screen flex'>
@@ -80,7 +79,7 @@ const gradientTextStyle=
         <div className='bg-gray-800 p-6 rounded-md text-white'>
           <div className='text-center my-6'>
             <h1 className={gradientTextStyle + ' text-3xl'}>BrandPal</h1>
-            <div className={gradientTextStyle}>Your AI Branding Assistant</div>
+            <div className="{gradientTextStyle}">Your AI Branding Assistant</div>
           </div>
           {displayedElement}
         </div>

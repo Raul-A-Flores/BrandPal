@@ -18,17 +18,18 @@ const Form: React.FunctionComponent<FormProps> = ({submitHandler, prompt, charac
   }
 
   let statusColor = 'text-slate-500'
-  let statusText = null;
+  let statusText = "Less than 32 characters.";
 
   if (!isPromptValid){
+
     statusColor = 'text-red-400';
-    statusText = `Input must be less than ${characterLimit} characters`
+    statusText = `Input must be less than ${characterLimit} characters ! `
   }
 
   return (
     <>
       <div className="mb-6 text-slate-400">
-        <h1 >Start up your business today!</h1>
+        <h1 >Start up your business today! Tell me what your brand is about and I will generate keywords for you.</h1>
       </div>
       <div>
         <input 
@@ -38,14 +39,15 @@ const Form: React.FunctionComponent<FormProps> = ({submitHandler, prompt, charac
         onChange={(e) => updatePromptValue(e.currentTarget.value)}
         ></input>
         <div className="flex justify-between my-2 text-slate-300 mb-6">
-          <div>This is a status</div>
-          <div>{prompt.length}/32</div>
+          <div className={statusColor} >{statusText}</div>
+          <div className="ml-3">{prompt.length}/32</div>
         </div>
       </div>
       <div>
         <button
             className="bg-gradient-to-r from-teal-400 to-blue-500 disabled:opacity-50 w-full rounded-md p-2"
             onClick={submitHandler}
+            disabled= {!isPromptValid}
             >Submit
         </button>
       </div>
